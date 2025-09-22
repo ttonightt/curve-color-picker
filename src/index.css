@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@theme {
+
+	--spacing-0: 0;
+	--spacing-01: 0.11111em;
+	--spacing-015: 0.16666em;
+	--spacing-02: 0.22222em;
+	--spacing-03: 0.33333em;
+	--spacing-04: 0.44444em;
+	--spacing-05: 0.55555em;
+	--spacing-06: 0.66666em;
+	--spacing-07: 0.77777em;
+	--spacing-08: 0.88888em;
+	--spacing-09: 0.99999em;
+	--spacing-1e: 1em;
+	--spacing-2e: 2em;
+	--spacing-3e: 3em;
+	--spacing-1px: 1px;
+	--spacing-2px: 2px;
+	--spacing-3px: 3px;
+	--spacing-4px: 4px;
+	--spacing-5px: 5px;
+	--spacing-6px: 6px;
+	--spacing-1r: 1rem;
+	--spacing-2r: 2rem;
+	--spacing-3r: 3rem;
+	--spacing-4r: 4rem;
+	--spacing-5r: 5rem;
+	--spacing-6r: 6rem;
+	--spacing-7r: 7rem;
+	--spacing-8r: 8rem;
+	--spacing-9r: 9rem;
+	--spacing-30w: 30vw;
+	--spacing-30h: 30vh;
+	--spacing-100w: 100vw;
+	--spacing-100h: 100vh;
+	--spacing-100: 100%;
+	--spacing-min: min-content;
+	--spacing-max: max-content;
+	--spacing-fit: fit-content;
+	--spacing-auto: auto;
+
+	--font-weight-100: 100;
+	--font-weight-200: 200;
+	--font-weight-300: 300;
+	--font-weight-400: 400;
+	--font-weight-500: 500;
+	--font-weight-600: 600;
+	--font-weight-700: 700;
+	--font-weight-800: 800;
+	--font-weight-900: 900;
+
+	--font-sans: "pixeloid";
+	--font-deco: "doab8m";
+
+	--text-inh: inherit;
+	--text-0: 0;
+	--text-1r: 1rem;
+	--text-2r: 2rem;
+	--text-3r: 3rem;
+	--text-4r: 4rem;
+	--text-5r: 5rem;
+	--text-6r: 6rem;
+	--text-7r: 7rem;
+	--text-8r: 8rem;
+	--text-9r: 9rem;
+	--text-1e: 1em;
+	--text-2e: 2em;
+	--text-3e: 3em;
+
+	--leading-inh: inherit;
+	--leading-1r: 1rem;
+	--leading-2r: 2rem;
+	--leading-3r: 3rem;
+	--leading-4r: 4rem;
+	--leading-5r: 5rem;
+	--leading-6r: 6rem;
+	--leading-7r: 7rem;
+	--leading-8r: 8rem;
+	--leading-9r: 9rem;
+	--leading-1e: 1em;
+	--leading-2e: 2em;
+	--leading-3e: 3em;
+
+	--clip-rabbet-01:    polygon(0 0.11111em, 0.11111em 0.11111em, 0.11111em 0, calc(100% - 0.11111em) 0, calc(100% - 0.11111em) 0.11111em, 100% 0.11111em, 100% calc(100% - 0.11111em), calc(100% - 0.11111em) calc(100% - 0.11111em), calc(100% - 0.11111em) 100%, 0.11111em 100%, 0.11111em calc(100% - 0.11111em), 0 calc(100% - 0.11111em));
+	--clip-rabbet-015:   polygon(0 0.16666em, 0.16666em 0.16666em, 0.16666em 0, calc(100% - 0.16666em) 0, calc(100% - 0.16666em) 0.16666em, 100% 0.16666em, 100% calc(100% - 0.16666em), calc(100% - 0.16666em) calc(100% - 0.16666em), calc(100% - 0.16666em) 100%, 0.16666em 100%, 0.16666em calc(100% - 0.16666em), 0 calc(100% - 0.16666em));
+	--clip-rabbet-r-01:  polygon(0 0, calc(100% - 0.11111em) 0, calc(100% - 0.11111em) 0.11111em, 100% 0.11111em, 100% calc(100% - 0.11111em), calc(100% - 0.11111em) calc(100% - 0.11111em), calc(100% - 0.11111em) 100%, 0 100%);
+	--clip-rabbet-r-015: polygon(0 0, calc(100% - 0.16666em) 0, calc(100% - 0.16666em) 0.16666em, 100% 0.16666em, 100% calc(100% - 0.16666em), calc(100% - 0.16666em) calc(100% - 0.16666em), calc(100% - 0.16666em) 100%, 0 100%);
+	--clip-rabbet-l-01:  polygon(0.11111em 0, 0.11111em 0.11111em, 0 0.11111em, 0 calc(100% - 0.11111em), 0.11111em calc(100% - 0.11111em), 0.11111em 100%, 100% 100%, 100% 0);
+	--clip-rabbet-l-015: polygon(0.16666em 0, 0.16666em 0.16666em, 0 0.16666em, 0 calc(100% - 0.16666em), 0.16666em calc(100% - 0.16666em), 0.16666em 100%, 100% 100%, 100% 0);
+	--clip-rabbet-b-01:  polygon(0 0, 100% 0, 100% calc(100% - 0.11111em), calc(100% - 0.11111em) calc(100% - 0.11111em), calc(100% - 0.11111em) 100%, 0.11111em 100%, 0.11111em calc(100% - 0.11111em), 0 calc(100% - 0.11111em));
+	--clip-rabbet-b-015: polygon(0 0, 100% 0, 100% calc(100% - 0.16666em), calc(100% - 0.16666em) calc(100% - 0.16666em), calc(100% - 0.16666em) 100%, 0.16666em 100%, 0.16666em calc(100% - 0.16666em), 0 calc(100% - 0.16666em));
+	--clip-rabbet-t-01:  polygon(0 0.11111em, 0.11111em 0.11111em, 0.11111em 0, calc(100% - 0.11111em) 0, calc(100% - 0.11111em) 0.11111em, 100% 0.11111em, 100% 100%, 0 100%);
+	--clip-rabbet-t-015: polygon(0 0.16666em, 0.16666em 0.16666em, 0.16666em 0, calc(100% - 0.16666em) 0, calc(100% - 0.16666em) 0.16666em, 100% 0.16666em, 100% 100%, 0 100%);
+
+}
+
+@layer base {
+
+	@font-face {
+		font-family: pixeloid;
+		font-weight: 400;
+		src: url(../fonts/9x/9x-Pixeloid-CY-reg.ttf);
+	}
+	
+	@font-face {
+		font-family: pixeloid;
+		font-weight: 900;
+		src: url(../fonts/9x/9x-Pixeloid-CY-bld.ttf);
+	}
+	
+	@font-face {
+		font-family: pixeloid;
+		font-weight: 900;
+		src: url(../fonts/9x/9x-NineteenNinetySeven.ttf);
+		unicode-range: U+40;
+	}
+	
+	@font-face {
+		font-family: doab8m;
+		font-weight: 900;
+		src: url(../fonts/9x/9x-DiaryOfAn8BitMage-CY.ttf);
+	}
+	
+	@font-face {
+		font-family: doab8m;
+		font-weight: 900;
+		src: url(../fonts/9x/9x-SuperLegendBoy.ttf);
+		unicode-range: U+40;
+	}
+	
+	@font-face {
+		font-family: doab8m;
+		font-weight: 900;
+		src: url(../fonts/9x/9x-Pixeloid-CY-bld.ttf);
+		unicode-range: U+0424, U+0444;
+	}
+
+	html {
+		font-size: 9px;
+	}
+
+	*, *::before, *::after {
+		text-underline-offset: 0.11111em;
+		text-decoration-thickness: 0.11111em;
+	}
+
+	input {
+		background-color: transparent;
+		line-height: 1em;
+	}
+
+	h1 {
+		font-size: 5rem;
+		font-family: doab8m;
+	}
+	
+	h2 {
+		font-size: 4rem;
+		font-weight: 900;
+	}
+	
+	h3 {
+		font-size: 4rem;
+		font-family: doab8m;
+	}
+	
+	h4 {
+		font-size: 3rem;
+		font-weight: 900;
+	}
+	
+	h5 {
+		font-size: 3rem;
+		font-family: doab8m;
+	}
+	
+	h6 {
+		font-size: 2rem;
+		font-weight: 900;
+	}
+	
+	b {
+		font-weight: 900;
+	}
+	
+	em {
+		font-family: doab8m;
+		font-style: normal;
+	}
+
+	img {
+		image-rendering: crisp-edges;
+	}
+
+	input::placeholder {
+		opacity: 0.6;
+		color: inherit;
+	}
+
+	button:focus-within {
+		outline: 3px dashed rgb(228, 204, 243);
+	}
+
+	div {
+		box-sizing: content-box;
+	}
+}
+
+@layer components {
+
+	.Button-Box {
+		position: relative;
+		box-sizing: content-box;
+		display: inline-block;
+		z-index: 1;
+		height: 1em;
+		padding: 0.5em;
+		font-size: 1em;
+		line-height: 1.2em;
+		text-align: center;
+		text-indent: 0.11111em;
+		white-space: nowrap;
+		word-break: keep-all;
+		user-select: none;
+		cursor: pointer;
+	}
+
+	.Underlay {
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+	}
+}
+
+@utility clip-* {
+
+	clip-path: --value(--clip-*);
+}
+
+@utility scrollbar-none {
+
+	& {
+		scrollbar-width: none;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@utility drop-* {
+
+	filter: --value(--shadow)
+}
