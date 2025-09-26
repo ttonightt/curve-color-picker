@@ -1,29 +1,38 @@
 
 export const RGBtoHex = ([r, g, b]) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, "0");
 
-export const HueToBrightestRGB = hue => {
+export const HSVtoRGB = (hue, saturation, value) => {
 
+	hue %= 360;
 	hue /= 60;
 
-	const h1 = Math.floor(hue);
-	const n = Math.floor(
-		255 * (
-			(h1 % 2) ? 1 - hue + h1 : hue - h1
-		)
-	);
+	const hue1 = Math.floor(hue);
+	const f =
+		hue1 % 2
+		?
+		hue - hue1
+		:
+		1 - hue + hue1;
 
-	switch (h1 % 6) {
+	const s = saturation / 100;
+	const v = value / 100;
+
+	const n = Math.floor(255 * v * (1 - (s * f)));
+	const m = Math.floor(255 * v * (1 - s));
+	const l = Math.floor(255 * v);
+
+	switch (hue1) {
 		case 0:
-			return "rgb(255," + n + ",0)";
+			return [l, n, m];
 		case 1:
-			return "rgb(" + n + ",255,0)";
+			return [n, l, m];
 		case 2:
-			return "rgb(0,255," + n + ")";
+			return [m, l, n];
 		case 3:
-			return "rgb(0," + n + ",255)";
+			return [m, n, l];
 		case 4:
-			return "rgb(" + n + ",0,255)";
+			return [n, m, l];
 		case 5:
-			return "rgb(255,0," + n + ")";
+			return [l, m, n];
 	}
 };
